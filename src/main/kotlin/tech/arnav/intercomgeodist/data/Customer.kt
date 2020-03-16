@@ -5,6 +5,9 @@ import kotlinx.serialization.Serializable
 import kotlinx.serialization.Transient
 import tech.arnav.intercomgeodist.geo.GeoPoint
 
+/**
+ * POJO class to hold Customer data
+ */
 @Serializable
 data class Customer(
     val latitude: String,
