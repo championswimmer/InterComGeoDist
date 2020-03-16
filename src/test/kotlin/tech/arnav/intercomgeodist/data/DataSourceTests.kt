@@ -1,6 +1,6 @@
-package tech.arnav.intercomgeodist
+package tech.arnav.intercomgeodist.data
 
-import org.junit.jupiter.api.Assertions.assertNotNull
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
@@ -16,7 +16,7 @@ class DataSourceTests {
 
     @Test
     fun canReadCustomersData() {
-        val customers = dataSource.readCustomerData()
-        assertNotNull(customers)
+        val customers = dataSource.getCustomers().toList()
+        assertTrue(customers.isNotEmpty())
     }
 }
