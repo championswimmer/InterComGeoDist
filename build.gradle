@@ -1,6 +1,7 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.3.70'
     id 'org.jetbrains.kotlin.plugin.serialization' version '1.3.70'
+    id 'jacoco'
 }
 
 group 'tech.arnav'
@@ -18,6 +19,9 @@ dependencies {
 }
 
 test {
+    jacoco {
+        enabled true
+    }
     useJUnitPlatform()
 }
 
@@ -34,3 +38,13 @@ jar {
     }
     from { configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
 }
+
+
+
+jacocoTestReport {
+    reports {
+        html.enabled true
+        html.destination file("${buildDir}/jacocoHtml")
+    }
+}
+

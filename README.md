@@ -45,7 +45,7 @@ User object format
 Compile project
 
 ```shell
-./gradlew jar
+./gradlew assemble
 ```
 
 Run Program
@@ -59,3 +59,14 @@ java -jar build/libs/IntercomGeoDist-1.0-SNAPSHOT.jar
 ```shell
 ./gradlew check 
 ```
+
+### Test Coverage & Report
+
+Run test with coverage report
+
+```shell
+./gradlew jacocoTestReport
+```
+
+Find test report (open in browser) -  
+`build/jacocoHtml/index.html`
